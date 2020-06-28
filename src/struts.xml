@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <package name="blog" extends="struts-default" namespace="/">
+
+        <action name="login" class="controller.LoginAction" method="login">
+            <result name="success">index.jsp</result>
+            <result name="error">user_login.jsp</result>
+        </action>
+        <action name="register" class="controller.RegisterAction" method="register">
+            <result name="success">user_login.jsp</result>
+            <result name="error">user_register.jsp</result>
+        </action>
+        <action name="send" class="controller.MessageAction" method="send">
+            <result name="success" type="redirectAction">show</result>
+        </action>
+        <action name="show" class="controller.ShowAction" method="showmessage">
+            <result  name="success">blogartical.jsp</result>
+        </action>
+        <action name="resume" class="controller.ResumeAction" method="ResumeShow">
+            <result name="success">Resume.jsp</result>
+        </action>
+        <action name="getMail" class="controller.GetMailAction" method="getmail">
+            <result name="success">index.jsp</result>
+        </action>
+        <action name="sendemail" class="controller.SendEmailAction" method="sendemail">
+            <result name="success">ShowMailMessage.jsp</result>
+        </action>
+
+        <action name="writeblog" class="controller.WriteBlogAction" method="writeblog">
+            <result name="success">writeartical.jsp</result>
+        </action>
+        <action name="judge" class="controller.LoginAction" method="judge">
+            <result name="success">home.jsp</result>
+        </action>
+        <action name="select" class="controller.SelectAction" method="select">
+            <result name="show" >usermanage.jsp</result>
+        </action>
+        <action name="delete" class="controller.SelectAction" method="delete">
+            <result name="success">usermanage.jsp</result>
+            <result name="error">index1.jsp</result>
+        </action>
+    </package>
+
+
+
+
+    <package name="p1" extends="struts-default" namespace="/">
+        <action name="uploade2" class="controller.Uploade2">
+            <!--引入默认拦截器-->
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="load">/success.jsp</result>
+        </action>
+    </package>
+
+    <package name="p2" extends="struts-default" namespace="/">
+        <!-- 文件下载 -->
+        <action name="DownLoadAction" class="controller.DownLoadAction">
+            <result type="stream">
+                <!-- 指定下载文件的类型 默认下载为txt格式 本例为下载视频 -->
+                <param name="contentType">text/plain</param>
+                <!-- 下载图片 -->
+                <!--  <param name="contentType">image/jpg</param> -->
+                <!--  解释说明：
+                  contentDisposition:指定下载文件在浏览器客户端窗口打开还是以附件的形式下载到本地
+                  inline:==》在浏览器窗口打开
+                  attachment==>以附件的形式下载到本地
+                 -->
+                <param name="contentDisposition">attachment;filename=${name}</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+    </package>
+
+</struts>

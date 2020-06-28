@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>爱心飘落特效</title>
+    <style type="text/css">
+        body{
+            margin: 0px;
+        }
+        /**{          选中所有标签
+            margin: 0px;
+        }*/
+        /*.snowfall-flakes {
+            position: relative;  相对定位
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+
+
+        }*/
+        .snowfall-flakes:before { /**伪元素 无法被选中或修改  不占用DOM*/
+            content: '';   /*激活伪元素的必要属性*/
+            width: 10px;
+            height: 16px;
+            background-color: red;
+            border-radius: 5px 5px 0px 0px;      /*擦去边角  50为半径画圆*/
+            position: absolute;   /*绝对定位*/
+            top: 0px;
+            left: 0;
+            transform:  rotate(-45deg);   /*旋转属性*/
+        }
+        .snowfall-flakes:after{
+            content:'' ;
+            width: 10px;
+            height: 16px;
+            background-color: red;
+            border-radius: 5px 5px 0px 0px;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            transform: translateX(4.3px)  rotate(45deg);
+        }
+        /*.left{
+            width: 100px;
+            height: 160px;
+            background-color: red;
+            border-radius: 50px 50px 0px 0px;      擦去边角  50为半径画圆
+           position: absolute;   绝对定位
+            top: 0px;
+            left: 0;
+            transform: translateX(43px) rotate(45deg);   旋转属性
+        }
+        .right{
+            width: 100px;
+            height: 160px;
+            background-color: red;
+            border-radius: 50px 50px 0px 0px;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            transform:  rotate(-45deg);
+        }*/
+    </style>
+</head>
+<body>
+    <div class="snowfall-flakes"></div>
+    <script src="jquery-1.2.6.min.js"></script>
+    <script src="snowfall.jquery.js"></script>
+    <script>
+        $(document).snowfall({flakeCount : 50, maxSpeed : 10,minSpeed:5});
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+}
+
+.left{
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color:white;
+}
+.center{
+    width: 60%;
+    padding-bottom: 10px;
+    float: left;
+    background-color: cornsilk;
+}
+.right{
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: white;
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+    /* background-color: cornsilk; */
+    padding-right:50px;
+    padding-left: 50px;
+}
+.image{
+    float: left;
+    width: 400px;
+    height: 400px;
+    margin-right: 5px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+.c1{font-size: 25px;font-family: "YouYuan"; line-height: 30px;}
+#p1{
+    font-family: "YouYuan";
+    color: red;
+    font-size: 40px;
+    line-height: 20px;
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+#p2{
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    color: green;
+    float: left;
+}
+
+.center div{
+    background-color: cornsilk;
+}
+
+
+.message_div{
+    padding-left: 20px;
+    width: 450px;
+}
+
+.message_head{
+    width: 450px;
+    height: 50px;
+}
+
+.message{
+    width: 450px;
+    height: 200px;
+    border: darkgray solid 1px;
+    font-size: 25px;
+
+}
+
+.send{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    font-size: 20px;
+    border-radius:50px;
+}
+
+.message_show{
+    padding-right: 20px;
+    width: 450px;
+
+}
+
+.show_ul{
+    list-style:none;
+}

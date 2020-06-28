@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/controller/LoginAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/controller/MessageAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/controller/RegisterAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/Mysql.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/爱心飘落特效" charset="UTF-8" />
+  </component>
+</project>
